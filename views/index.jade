@@ -1,0 +1,67 @@
+extends layout
+
+block content
+    table.body(cellpadding=0, cellspacing=0)
+        tr
+            td(colspan=2)
+                h1.table_title Product list
+        tr
+            td(width='20%', style='padding: 20px;')
+                ul.menu_list
+                    li.active(data-menu-id='1') Product list
+                    li(data-menu-id='2') Product registration
+                    li(data-menu-id='3') Warehousing
+                    li(data-menu-id='4') Be released
+            td(width='80%', style='vertical-align: top; padding: 20px;')
+                table#item_list(cellpadding=0, cellspacing=0)
+                    thead
+                        th Order
+                        th Category
+                        th Product Name
+                        th Quantity
+                    tbody
+                table#create_item(style='display: none;')
+                    tr
+                        td(colspan='2')
+                            label(for='category') Category
+                            select#category
+                                option(disabled, selected) Unselected
+                                option Fashion clothes / underwear
+                                option Sports / leisure
+                                option Beauty
+                                option General goodshoespares
+                                option Luxury / out-of-premise speed
+                                option Childbirth / birth
+                                option Furniture / bedding / home deco
+                                option Food
+                                option Lifetop
+                                option Home appliances / digital
+                                option Pet
+                                option Travel / Ticket
+                                option Bookoffice supplies
+                                option Rental / insurance
+                        td
+                            label(for='name') Product name
+                            input#name(type='text')
+                        td
+                            label(for='corporation') Corporation name
+                            input#corporation(type='text')
+                    tr
+                        td
+                            label(for='price') Unit price
+                            input#price(type='number', value='0')
+                        td
+                            label(for='priceReal') Supply price
+                            input#priceReal(type='number', value='0')
+                        td
+                            label(for='quantity') Initial quantity
+                            input#quantity(type='number', value='0')
+                        td
+                            label(for='unit') Unit
+                            input#unit(type='text', value='EA')
+                    tr
+                        td(colspan=4)
+                            textarea#desc
+                    tr
+                        td(colspan=4)
+                            button(type='button', onclick='createItem()') Register

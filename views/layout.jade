@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(type='text/javascript', src='/library/sweetalert2/sweetalert2.min.js')
+        link(rel='stylesheet', href='/library/sweetalert2/sweetalert2.min.css')
+    body
+        section.body
+            h1.title= title
+            block content
+        script(src='/javascripts/index.js', type='text/javascript')
